@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Edit User</title>
+</head>
+<body>
+
+    <style>
+        .container-{
+            display: grid;
+            justify-content: center;
+        }
+    </style>
+
+    <div class="container- mt-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Edit User</h5>
+              <form action="/mini_super/add-user/" method='POST'>{% csrf_token %}
+                <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Name" name="name">
+                <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Paternal Surname" name="p_surname">
+                <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Maternal Surname" name="m_surname">
+                <input type="email" class="form-control mb-3" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+                <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Age" name="age">
+                <input type="tel" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Phone Number" name="phone">
+                <button type="submit" class="btn btn-primary">Add</button>
+                {% for error in errors %}
+                <div class="alert alert-danger mt-3 mb-3" role="alert">
+                    {{error}}
+                </div>
+                {% endfor %}
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Edit User</title>
+</head>
+<body>
+
+    <style>
+        .container-{
+            display: grid;
+            justify-content: center;
+        }
+    </style>
+
+    <div class="container- mt-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Edit User</h5>
+              <form action="/mini_super/edit-user/{{user.id}}" method='POST'>{% csrf_token %}
+                Name
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.name}}" name="name">
+                Paternal Surname
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.paternal_surname}}" name="p_surname">
+                Maternal Surname
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.maternal_surname}}" name="m_surname">
+                Email
+                <input type="email" class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.email}}" name="email">
+                Age
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.age}}" name="age">
+                Phone Number
+                <input type="tel"   class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.phone}}" name="phone">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
