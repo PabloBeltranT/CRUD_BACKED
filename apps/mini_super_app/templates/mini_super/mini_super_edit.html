@@ -22,17 +22,17 @@
               <h5 class="card-title">Edit User</h5>
               <form action="/mini_super/edit-user/{{user.id}}" method='POST'>{% csrf_token %}
                 Name
-                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.name}}" name="name">
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.name}}" name="name" required>
                 Paternal Surname
-                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.paternal_surname}}" name="p_surname">
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.paternal_surname}}" name="p_surname" required>
                 Maternal Surname
-                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.maternal_surname}}" name="m_surname">
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.maternal_surname}}" name="m_surname" required>
                 Email
-                <input type="email" class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.email}}" name="email">
+                <input type="email" class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.email}}" name="email" required>
                 Age
-                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.age}}" name="age">
+                <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.age}}" name="age" required>
                 Phone Number
-                <input type="tel"   class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.phone}}" name="phone">
+                <input type="tel"   class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.phone}}" name="phone" required minlength="10">
                 <button type="submit" class="btn btn-primary">Save</button>
               </form>
             </div>

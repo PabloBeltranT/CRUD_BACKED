@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.forms.models import model_to_dict
 from .models import miniSuperModel
 import requests
 import json
@@ -35,18 +34,18 @@ def  add_user(request):
         req = requests.post(api_url, json=data)
         response_dict = json.loads(req.text)
 
-                                                                              # Verificamos si la despuesta de la API devuelve un Json con errores.
-        errors = []                                                           # Creamos una lista para almacenar los errores.
-        try:                                                                  #
-            for key in response_dict:                                         # Para cada elemento en el diccionario
-                errors.append(response_dict[key][0])                          # agregamos elemento a la lista de errores.
-        except:                                                               #
-            errors = []                                                       # Si no existen errores en la respuesta dejamos el diccionario vacio.
-        if errors:                                                            #
-            return render(request, 'mini_super_add.html', {'errors':errors})  # Si existen errores en la respuesta, cargamos de nuevo la pagina indicandole los errores.
+                                                                       
+        errors = []                                                         
+        try:                                                                 
+            for key in response_dict:                                    
+                errors.append(response_dict[key][0])                     
+        except:                                                             
+            errors = []                                                     
+        if errors:                                                           
+            return render(request, 'mini_super_add.html', {'errors':errors})  
 
-        return redirect('list_users')                                         # Si el metodo es POST y no existieron errores en la validacion redireccionamos al listado.
-    return render(request, 'mini_super_add.html')                             # Si el metodo no es POST cargamos la plantilla para ingresar usuario.
+        return redirect('list_users')                                      
+    return render(request, 'mini_super_add.html')                            
 
 
 # Vista para hacer put via api a usuario solicitado.
@@ -79,7 +78,6 @@ def  delete_user(request,pk):
 def sort_alphabetically(request):
     req = requests.get(api_url).json()
     objects_sorted = sortAlphabetically(list_of_objects=req, field='paternal_surname')
-    print(objects_sorted.str())
     users = objects_sorted.sort()
     return render(request, 'mini_super.html', {'users':users})
 
