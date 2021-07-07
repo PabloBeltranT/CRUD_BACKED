@@ -18,12 +18,12 @@ from django.urls import path, include
 
 app_urls = [
     path('admin/', admin.site.urls),
-    path('mini_super/', include('apps.mini_super_app.urls')),
+    path('', include('apps.mini_super_app.urls')),
 ]
 
 
 api_routers = [
-    path('mini_super/', include('api.routers')),
+    path('', include('api.routers')),
 ]
 
 

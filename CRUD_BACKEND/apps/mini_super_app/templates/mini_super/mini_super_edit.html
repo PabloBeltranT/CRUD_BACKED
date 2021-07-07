@@ -20,7 +20,7 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Edit User</h5>
-              <form action="/mini_super/edit-user/{{user.id}}" method='POST'>{% csrf_token %}
+              <form action="/edit-user/{{user.id}}" method='POST'>{% csrf_token %}
                 Name
                 <input type="text"  class="form-control mb-3" id="exampleFormControlInput1" placeholder="{{user.name}}" name="name" required>
                 Paternal Surname

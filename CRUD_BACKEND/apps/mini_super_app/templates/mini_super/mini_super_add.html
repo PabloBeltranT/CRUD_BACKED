@@ -20,7 +20,7 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Edit User</h5>
-              <form action="/mini_super/add-user/" method='POST'>{% csrf_token %}
+              <form action="/add-user/" method='POST'>{% csrf_token %}
                 <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Name" name="name" required>
                 <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Paternal Surname" name="p_surname" required>
                 <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="Maternal Surname" name="m_surname" required>

@@ -7,7 +7,7 @@ from .objects import sortAlphabetically, sortNumerically
 
 from api.serializers import miniSuperSerializer
 
-api_url = 'http://localhost:8000/mini_super/api/'
+api_url = 'http://localhost:8000/api/'
 
 
 # Vista para hacer get via api y renderizar tabla de usuarios.

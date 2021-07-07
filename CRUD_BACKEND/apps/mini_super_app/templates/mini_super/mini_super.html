@@ -39,17 +39,17 @@
                         <td>{{user.age}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.phone}}</td>
-                        <td><a href="/mini_super/edit-user/{{user.id}}"   class="btn btn-warning">Edit</a></td>
-                        <td><a href="/mini_super/delete-user/{{user.id}}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="/edit-user/{{user.id}}"   class="btn btn-warning">Edit</a></td>
+                        <td><a href="/delete-user/{{user.id}}" class="btn btn-danger">Delete</a></td>
                       </tr>
                       {% endfor %}
                     </tbody>
                   </table>
-                  <a href="/mini_super/add-user/" class="btn btn-primary">Add User</a>
-                  <a href="/mini_super/app/" class="btn btn-primary">Sort</a>
-                  <a href="/mini_super/sort-surname/" class="btn btn-primary">Sort Alphabetically</a>
-                  <a href="/mini_super/sort-numerically/" class="btn btn-primary">Sort Numerically</a>
-                  <a href="/mini_super/api/" class="btn btn-primary">REST_FRAMEWORK</a>
+                  <a href="/add-user/" class="btn btn-primary">Add User</a>
+                  <a href="/" class="btn btn-primary">Sort</a>
+                  <a href="/sort-surname/" class="btn btn-primary">Sort Alphabetically</a>
+                  <a href="/sort-numerically/" class="btn btn-primary">Sort Numerically</a>
+                  <a href="/api/" class="btn btn-primary">REST_FRAMEWORK</a>
             </div>
         </div>
     </div>
